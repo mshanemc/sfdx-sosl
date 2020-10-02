@@ -54,7 +54,7 @@
             "git add"
         ]
     },
-    "name": "plugin-streaming",
+    "name": "@mshanemc/plugin-streaming",
     "oclif": {
         "bin": "sfdx",
         "commands": "./lib/commands",
