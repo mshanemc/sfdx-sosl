@@ -1,0 +1,81 @@
+{
+  "author": "mshanemc <shane.mclaughlin@salesforce.com>",
+  "dependencies": {
+    "@mshanemc/plugin-helpers": "^2.0.1",
+    "@oclif/config": "^1.17.0",
+    "@salesforce/command": "^3.0.3",
+    "@salesforce/dev-config": "^2.0.0",
+    "chalk": "^4.1.0"
+  },
+  "description": "> TODO: description",
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@types/jest": "^26.0.14",
+    "@types/xml2js": "^0.4.5",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "@typescript-eslint/parser": "^4.3.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-typescript": "^11.0.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    ".oclif.manifest.json",
+    "/lib",
+    "/messages"
+  ],
+  "homepage": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "license": "ISC",
+  "lint-staged": {
+    "*.{ts,js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "name": "plugin-streaming",
+  "oclif": {
+    "bin": "sfdx",
+    "commands": "./lib/commands",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "clean": "rimraf .oclif.manifest.json",
+    "postpublish": "yarn run clean; git push; git push --tags",
+    "posttest": "",
+    "prepare": "yarn run build && oclif-dev manifest && yarn test:clean",
+    "prepublishOnly": "yarn run build && oclif-dev manifest",
+    "preversion": "yarn run clean",
+    "test": "yarn run prepare && jest --runInBand",
+    "test:clean": "rimraf testProject*",
+    "test:local": "LOCALONLY='true' yarn run prepare && jest --runInBand",
+    "test:parallel": "yarn run prepare && jest",
+    "test:watch": "yarn run prepare && jest --watch --runInBand",
+    "version": "oclif-dev readme && git add README.md",
+    "prettier": "prettier --write src/**/**/*.ts && prettier --write src/**/*.ts && prettier --write src/*.ts && prettier --write test/**/*.ts && prettier --write test/**/**/*.ts"
+  },
+  "version": "1.1.3"
+}
