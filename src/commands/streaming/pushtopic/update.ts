@@ -8,10 +8,10 @@ export default class PushTopicUpdate extends SfdxCommand {
     public static aliases = ['shane:streaming:pushtopic:update'];
 
     public static examples = [
-        `sfdx streaming:pushtopic:upsert -n myTopic -q "select Id,Name from account"
+        `sfdx streaming:pushtopic:update -n myTopic -q "select Id,Name from account"
     // modifies the push topic
     `,
-        `sfdx streaming:pushtopic:upsert -n myTopic -q "select Id from account" -f All -o create,update
+        `sfdx streaming:pushtopic:update -n myTopic -q "select Id from account" -f All -o create,update
     // modifies the push topic and sets operations and watches all fields
     `
     ];
