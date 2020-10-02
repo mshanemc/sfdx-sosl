@@ -10,7 +10,7 @@ $ npm install -g plugin-streaming
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-plugin-streaming/1.1.4 darwin-x64 node-v13.2.0
+plugin-streaming/1.1.5 darwin-x64 node-v13.2.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
@@ -60,7 +60,7 @@ EXAMPLES
   sfdx streaming:list -t cdc,topic // list CDC and PushTopic but not standard and custom PlatformEvents
 ```
 
-_See code: [src/commands/streaming/list.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/list.ts)_
+_See code: [src/commands/streaming/list.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.5/src/commands/streaming/list.ts)_
 
 ## `sfdx streaming:pushtopic:create -n <string> -q <string> [-d <integer>] [-f <string>] [-o <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -112,7 +112,7 @@ EXAMPLES
        // creates the push topic and sets operations and watches all fields
 ```
 
-_See code: [src/commands/streaming/pushtopic/create.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/create.ts)_
+_See code: [src/commands/streaming/pushtopic/create.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.5/src/commands/streaming/pushtopic/create.ts)_
 
 ## `sfdx streaming:pushtopic:deactivate -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -144,7 +144,7 @@ EXAMPLE
   sfdx streaming:pushtopic:deactivate -n myTopic
 ```
 
-_See code: [src/commands/streaming/pushtopic/deactivate.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/deactivate.ts)_
+_See code: [src/commands/streaming/pushtopic/deactivate.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.5/src/commands/streaming/pushtopic/deactivate.ts)_
 
 ## `sfdx streaming:pushtopic:delete -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -176,7 +176,7 @@ EXAMPLE
   sfdx streaming:pushtopic:delete -n myTopic
 ```
 
-_See code: [src/commands/streaming/pushtopic/delete.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/delete.ts)_
+_See code: [src/commands/streaming/pushtopic/delete.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.5/src/commands/streaming/pushtopic/delete.ts)_
 
 ## `sfdx streaming:pushtopic:update -n <string> [-d <integer>] [-f <string>] [-o <array>] [-q <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -225,7 +225,7 @@ EXAMPLES
        // modifies the push topic and sets operations and watches all fields
 ```
 
-_See code: [src/commands/streaming/pushtopic/update.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/update.ts)_
+_See code: [src/commands/streaming/pushtopic/update.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.5/src/commands/streaming/pushtopic/update.ts)_
 
 ## `sfdx streaming:subscribe [-t <string>] [-n <string>] [-r <integer>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -265,5 +265,5 @@ EXAMPLES
   sfdx streaming:subscribe -t topic -n myTopic   // subscribe to a push topic
 ```
 
-_See code: [src/commands/streaming/subscribe.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/subscribe.ts)_
+_See code: [src/commands/streaming/subscribe.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.5/src/commands/streaming/subscribe.ts)_
 <!-- commandsstop -->
