@@ -5,31 +5,28 @@ Streaming API and push topic management.
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g plugin-streaming
 $ sfdx COMMAND
 running command...
 $ sfdx (-v|--version|version)
-plugin-streaming/1.1.3 darwin-x64 node-v13.2.0
+plugin-streaming/1.1.4 darwin-x64 node-v13.2.0
 $ sfdx --help [COMMAND]
 USAGE
   $ sfdx COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`sfdx streaming:list [-t <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streaminglist--t-array--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-- [`sfdx streaming:pushtopic:create -n <string> -q <string> [-d <integer>] [-f <string>] [-o <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopiccreate--n-string--q-string--d-integer--f-string--o-array--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-- [`sfdx streaming:pushtopic:deactivate -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopicdeactivate--n-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-- [`sfdx streaming:pushtopic:delete -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopicdelete--n-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-- [`sfdx streaming:pushtopic:update -n <string> [-d <integer>] [-f <string>] [-o <array>] [-q <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopicupdate--n-string--d-integer--f-string--o-array--q-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-- [`sfdx streaming:subscribe [-t <string>] [-n <string>] [-r <integer>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingsubscribe--t-string--n-string--r-integer--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx streaming:list [-t <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streaminglist--t-array--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx streaming:pushtopic:create -n <string> -q <string> [-d <integer>] [-f <string>] [-o <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopiccreate--n-string--q-string--d-integer--f-string--o-array--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx streaming:pushtopic:deactivate -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopicdeactivate--n-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx streaming:pushtopic:delete -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopicdelete--n-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx streaming:pushtopic:update -n <string> [-d <integer>] [-f <string>] [-o <array>] [-q <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingpushtopicupdate--n-string--d-integer--f-string--o-array--q-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx streaming:subscribe [-t <string>] [-n <string>] [-r <integer>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-streamingsubscribe--t-string--n-string--r-integer--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
 ## `sfdx streaming:list [-t <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -37,7 +34,7 @@ What kinds of things can I subscribe to?
 
 ```
 USAGE
-  $ sfdx streaming:list [-t <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfdx streaming:list [-t <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -55,10 +52,15 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+ALIASES
+  $ sfdx shane:streaming:list
+
 EXAMPLES
   sfdx streaming:list // list everything
   sfdx streaming:list -t cdc,topic // list CDC and PushTopic but not standard and custom PlatformEvents
 ```
+
+_See code: [src/commands/streaming/list.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/list.ts)_
 
 ## `sfdx streaming:pushtopic:create -n <string> -q <string> [-d <integer>] [-f <string>] [-o <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -66,7 +68,7 @@ Create push topics
 
 ```
 USAGE
-  $ sfdx streaming:pushtopic:create -n <string> -q <string> [-d <integer>] [-f <string>] [-o <array>] [-u <string>]
+  $ sfdx streaming:pushtopic:create -n <string> -q <string> [-d <integer>] [-f <string>] [-o <array>] [-u <string>] 
   [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -99,16 +101,18 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+ALIASES
+  $ sfdx shane:streaming:pushtopic:create
+
 EXAMPLES
-  sfdx streaming:pushtopic:upsert -n myTopic -q "select Id,Name from account"
-       // creates or modifies the push topic
-
-  sfdx streaming:pushtopic:upsert -n myTopic -q "select Id from account" -f All -o create,update
-       // creates or modifies the push topic and sets operations and watches all fields
-
-  sfdx streaming:pushtopic:upsert -n myTopic --deactivate -q "select Id from account"
-       // deactivate an existing push topic
+  sfdx streaming:pushtopic:create -n myTopic -q "select Id,Name from account"
+       // creates the push topic
+    
+  sfdx streaming:pushtopic:create -n myTopic -q "select Id from account" -f All -o create,update
+       // creates the push topic and sets operations and watches all fields
 ```
+
+_See code: [src/commands/streaming/pushtopic/create.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/create.ts)_
 
 ## `sfdx streaming:pushtopic:deactivate -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -116,7 +120,7 @@ deactivate push topics
 
 ```
 USAGE
-  $ sfdx streaming:pushtopic:deactivate -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfdx streaming:pushtopic:deactivate -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -133,9 +137,14 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+ALIASES
+  $ sfdx shane:streaming:pushtopic:deactivate
+
 EXAMPLE
   sfdx streaming:pushtopic:deactivate -n myTopic
 ```
+
+_See code: [src/commands/streaming/pushtopic/deactivate.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/deactivate.ts)_
 
 ## `sfdx streaming:pushtopic:delete -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -143,7 +152,7 @@ Delete a push topic
 
 ```
 USAGE
-  $ sfdx streaming:pushtopic:delete -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel
+  $ sfdx streaming:pushtopic:delete -n <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -160,17 +169,22 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+ALIASES
+  $ sfdx shane:streaming:pushtopic:delete
+
 EXAMPLE
   sfdx streaming:pushtopic:delete -n myTopic
 ```
 
+_See code: [src/commands/streaming/pushtopic/delete.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/delete.ts)_
+
 ## `sfdx streaming:pushtopic:update -n <string> [-d <integer>] [-f <string>] [-o <array>] [-q <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
-Upsert push topics
+Update push topics
 
 ```
 USAGE
-  $ sfdx streaming:pushtopic:update -n <string> [-d <integer>] [-f <string>] [-o <array>] [-q <string>] [-u <string>]
+  $ sfdx streaming:pushtopic:update -n <string> [-d <integer>] [-f <string>] [-o <array>] [-q <string>] [-u <string>] 
   [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -200,22 +214,24 @@ OPTIONS
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+ALIASES
+  $ sfdx shane:streaming:pushtopic:update
+
 EXAMPLES
   sfdx streaming:pushtopic:upsert -n myTopic -q "select Id,Name from account"
-       // creates or modifies the push topic
-
+       // modifies the push topic
+    
   sfdx streaming:pushtopic:upsert -n myTopic -q "select Id from account" -f All -o create,update
-       // creates or modifies the push topic and sets operations and watches all fields
-
-  sfdx streaming:pushtopic:upsert -n myTopic --deactivate -q "select Id from account"
-       // deactivate an existing push topic
+       // modifies the push topic and sets operations and watches all fields
 ```
+
+_See code: [src/commands/streaming/pushtopic/update.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/pushtopic/update.ts)_
 
 ## `sfdx streaming:subscribe [-t <string>] [-n <string>] [-r <integer>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 ```
 USAGE
-  $ sfdx streaming:subscribe [-t <string>] [-n <string>] [-r <integer>] [-u <string>] [--apiversion <string>] [--json]
+  $ sfdx streaming:subscribe [-t <string>] [-n <string>] [-r <integer>] [-u <string>] [--apiversion <string>] [--json] 
   [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -237,6 +253,17 @@ OPTIONS
 
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
+
+ALIASES
+  $ sfdx shane:streaming:subscribe
+
+EXAMPLES
+  sfdx streaming:subscribe -t cdc -n ChangeEvents   // subscribe to all CDC 
+  sfdx streaming:subscribe -t cdc -n AccountChangeEvent   // subscribe to cdc for a standard object 
+  sfdx streaming:subscribe -t event -n Something__e   // subscribe to platform event 
+  sfdx streaming:subscribe -t event -n Something__e -r 6744   // subscribe to platform event with a replay ID 
+  sfdx streaming:subscribe -t topic -n myTopic   // subscribe to a push topic
 ```
 
+_See code: [src/commands/streaming/subscribe.ts](https://github.com/mshanemc/streaming-sfdx/blob/v1.1.4/src/commands/streaming/subscribe.ts)_
 <!-- commandsstop -->
