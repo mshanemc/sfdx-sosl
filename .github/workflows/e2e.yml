@@ -8,7 +8,7 @@ on:
             - 'README.md'
             - 'bin/**'
 jobs:
-    sfdx_setup:
+    test:
         name: 'SFDX devhub auth and test'
         runs-on: ubuntu-latest
         strategy:
@@ -23,6 +23,9 @@ jobs:
                   ./sfdx/install
                   echo ${{ secrets.DEV_HUB_SFDXURL }} > sfdx_auth
                   sfdx force:auth:sfdxurl:store -f sfdx_auth -d
+            - name: check version
+              run: sfdx version
+            - name: install packages
             - uses: actions/checkout@v2
             - name: setup node ${{matrix.node-version}}
               uses: actions/setup-node@v1.4.1
@@ -30,5 +33,7 @@ jobs:
                   node-version: ${{matrix.node-version}}
             - name: install packages
               run: yarn install
+            - name: check version
+              run: sfdx version
             - name: test
               run: yarn test
