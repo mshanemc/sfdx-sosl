@@ -12,13 +12,13 @@ jobs:
         name: 'SFDX devhub auth and test'
         runs-on: ubuntu-latest
         steps:
-            - name: 'Populate auth file with SFDX_URL secret'
-              shell: bash
-              run: 'echo ${{ secrets.DEV_HUB_SFDXURL}} > ./SFDX_URL_STORE.txt'
-            - name: 'Authenticate against dev hub'
-              uses: forcedotcom/salesforcedx-actions@master
-              with:
-                  args: 'force:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=hub --setdefaultdevhubusername'
+            - name: Install sfdx
+              run: |
+                  mkdir sfdx
+                  wget -qO- https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz | tar xJ -C sfdx --strip-components 1
+                  ./sfdx/install
+                  echo ${{ secrets.DEV_HUB_SFDXURL }} > sfdx_auth
+                  sfdx force:auth:sfdxurl:store -f sfdx_auth -d
             - uses: actions/checkout@v2
             - uses: borales/actions-yarn@v2.0.0
               with:
