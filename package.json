@@ -67,7 +67,7 @@
         "build": "rimraf lib && tsc",
         "clean": "rimraf .oclif.manifest.json",
         "postpublish": "yarn run clean; git push; git push --tags",
-        "posttest": "",
+        "posttest": "rimraf testProject*",
         "prepare": "yarn run build && oclif-dev manifest && yarn test:clean",
         "prepublishOnly": "yarn run build && oclif-dev manifest",
         "preversion": "yarn run clean",
