@@ -25,7 +25,6 @@ jobs:
                   sfdx force:auth:sfdxurl:store -f sfdx_auth -d
             - name: check version
               run: sfdx version
-            - name: install packages
             - uses: actions/checkout@v2
             - name: setup node ${{matrix.node-version}}
               uses: actions/setup-node@v1.4.1
