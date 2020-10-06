@@ -7,12 +7,29 @@ on:
         paths-ignore:
             - 'README.md'
             - 'bin/**'
-
-steps:
-    - name: 'Populate auth file with SFDX_URL secret'
-      shell: bash
-      run: 'echo ${{ secrets.DEV_HUB_SFDXURL}} > ./SFDX_URL_STORE.txt'
-    - name: 'Authenticate against dev hub'
-      uses: forcedotcom/salesforcedx-actions@master
-      with:
-          args: 'force:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=hub --setdefaultdevhubusername'
+jobs:
+    sfdx_setup:
+        name: 'Run jest tests'
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'Populate auth file with SFDX_URL secret'
+              shell: bash
+              run: 'echo ${{ secrets.DEV_HUB_SFDXURL}} > ./SFDX_URL_STORE.txt'
+            - name: 'Authenticate against dev hub'
+              uses: forcedotcom/salesforcedx-actions@master
+              with:
+                  args: 'force:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=hub --setdefaultdevhubusername'
+    build:
+        name: Test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: borales/actions-yarn@v2.0.0
+              with:
+                  cmd: install # will run `yarn install` command
+            - uses: borales/actions-yarn@v2.0.0
+              with:
+                  cmd: build # will run `yarn build` command
+            - uses: borales/actions-yarn@v2.0.0
+              with:
+                  cmd: test # will run `yarn test` command
