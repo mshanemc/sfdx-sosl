@@ -1,4 +1,4 @@
-name: Run jest tests
+name: 'Run jest tests'
 
 on:
     push:
@@ -9,7 +9,7 @@ on:
             - 'bin/**'
 jobs:
     sfdx_setup:
-        name: 'Run jest tests'
+        name: 'SFDX devhub auth and test'
         runs-on: ubuntu-latest
         steps:
             - name: 'Populate auth file with SFDX_URL secret'
@@ -19,10 +19,6 @@ jobs:
               uses: forcedotcom/salesforcedx-actions@master
               with:
                   args: 'force:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=hub --setdefaultdevhubusername'
-    build:
-        name: Test
-        runs-on: ubuntu-latest
-        steps:
             - uses: actions/checkout@v2
             - uses: borales/actions-yarn@v2.0.0
               with:
