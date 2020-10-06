@@ -11,7 +11,11 @@ jobs:
     sfdx_setup:
         name: 'SFDX devhub auth and test'
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x]
         steps:
+            - uses: actions/checkout@v2
             - name: Install sfdx
               run: |
                   mkdir sfdx
@@ -20,12 +24,11 @@ jobs:
                   echo ${{ secrets.DEV_HUB_SFDXURL }} > sfdx_auth
                   sfdx force:auth:sfdxurl:store -f sfdx_auth -d
             - uses: actions/checkout@v2
-            - uses: borales/actions-yarn@v2.0.0
+            - name: setup node ${{matrix.node-version}}
+              uses: actions/setup-node@v1.4.1
               with:
-                  cmd: install # will run `yarn install` command
-            - uses: borales/actions-yarn@v2.0.0
-              with:
-                  cmd: build # will run `yarn build` command
-            - uses: borales/actions-yarn@v2.0.0
-              with:
-                  cmd: test # will run `yarn test` command
+                  node-version: ${{matrix.node-version}}
+            - name: install packages
+              run: yarn install
+            - name: test
+              run: yarn test
