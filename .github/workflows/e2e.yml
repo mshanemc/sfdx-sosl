@@ -32,7 +32,5 @@ jobs:
                   node-version: ${{matrix.node-version}}
             - name: install packages
               run: yarn install
-            - name: check version
-              run: sfdx version
             - name: test
               run: yarn test
