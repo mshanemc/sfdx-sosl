@@ -23,8 +23,8 @@ jobs:
                   ./sfdx/install
                   echo ${{ secrets.DEV_HUB_SFDXURL }} > sfdx_auth
                   sfdx force:auth:sfdxurl:store -f sfdx_auth -d
-            - name: check version
-              run: sfdx version
+            - name: link plugin
+              run: echo 'y' | sfdx plugins:link
             - uses: actions/checkout@v2
             - name: setup node ${{matrix.node-version}}
               uses: actions/setup-node@v1.4.1
