@@ -1,6 +1,6 @@
 {
     "author": "mshanemc <shane.mclaughlin@salesforce.com>",
-    "bugs": "https://github.com/mshanemc/streaming-sfdx/issues",
+    "bugs": "https://github.com/mshanemc/sfdx-sosl/issues",
     "dependencies": {
         "@mshanemc/plugin-helpers": "^2.0.1",
         "@oclif/config": "^1.17.0",

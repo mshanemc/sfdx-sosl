@@ -9,7 +9,7 @@
     "paths": {
       "*": ["./node_modules/@salesforce/core/typings/*"]
     },
-    "types": ["node", "jest", "js2xmlparser"],
+    "types": ["node", "jest"],
     "target": "ES6"
   },
   "include": ["./src/**/*"],
