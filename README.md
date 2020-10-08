@@ -1,8 +1,8 @@
-# `plugin-streaming`
+# `sfdx-sosl`
 
 [![npm version](https://badge.fury.io/js/%40mshanemc%2Fsfdx-sosl.svg)](https://badge.fury.io/js/%40mshanemc%2Fsfdx-sosl)
 
-Streaming API and push topic management.
+SOSL via CLI plugin
 
 # Usage
 
@@ -19,15 +19,16 @@ $ sfdx sosl --help
 # Commands
 
 <!-- commands -->
-* [`sfdx data:sosl:query -q <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-datasoslquery--q-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+
+-   [`sfdx data:sosl:query -q <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-datasoslquery--q-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
 ## `sfdx data:sosl:query -q <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
-Runs a sosl query.  SOSL Reference: https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl_syntax.htm
+Runs a sosl query. SOSL Reference: https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl_syntax.htm
 
 ```
 USAGE
-  $ sfdx data:sosl:query -q <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  $ sfdx data:sosl:query -q <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -54,11 +55,12 @@ ALIASES
 
 EXAMPLES
   sfdx force:data:sosl:query -q "find {something}"
-        
-  sfdx force:data:sosl:query -q "find {Jack} returning User(Name), Account(Name),Contact(FirstName,LastName,Department)" 
+
+  sfdx force:data:sosl:query -q "find {Jack} returning User(Name), Account(Name),Contact(FirstName,LastName,Department)"
   -u platformers
   // search across several objects with different results fields on a specified org
 ```
 
 _See code: [src/commands/data/sosl/query.ts](https://github.com/mshanemc/sfdx-sosl/blob/v1.1.0/src/commands/data/sosl/query.ts)_
+
 <!-- commandsstop -->
