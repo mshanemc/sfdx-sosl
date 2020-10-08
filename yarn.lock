@@ -489,13 +489,14 @@
   resolved "https://registry.yarnpkg.com/@lifeomic/attempt/-/attempt-3.0.0.tgz#75fecc204f8b0ac18b5363b4404bb32450f01859"
   integrity sha512-Ibk4Vfl46dSrhtH5fHsrTA4waAuyP7/qcr3uo0mO70azRc6LWgJILlMy3B1oOvyiN9jQcdqwsThaQkPKLiYKTg==
 
-"@mshanemc/plugin-helpers@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@mshanemc/plugin-helpers/-/plugin-helpers-2.0.1.tgz#4362c2d3dc0743049c98555798bd3d5556ae93b5"
-  integrity sha512-90Wf8ty73XJy4y4iCRDaFwWA0BWvuDlLzuNcXI7STYDVMytAc3LLG/WlICXWpO7Elobj+ZFfHH6ghNh38AgdYA==
+"@mshanemc/plugin-helpers@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@mshanemc/plugin-helpers/-/plugin-helpers-2.0.5.tgz#b4e5e6c6c36902ba6663dd238b8a11583fdfb10a"
+  integrity sha512-j9qHCQBnrT3OLD9exHbIzng4ePPCd52kZPOU62PGC/Ygci4jlK2Yq3IELwJZ5g+Jiwtt3lqYIDBOh0sdpawWrg==
   dependencies:
     "@lifeomic/attempt" "^3.0.0"
     "@salesforce/command" "^3.0.3"
+    "@salesforce/core" "^2.12.3"
     "@salesforce/dev-config" "^2.0.0"
     chalk "^4.1.0"
     fs-extra "^9.0.1"
@@ -661,7 +662,7 @@
     chalk "^2.4.2"
     cli-ux "^4.9.3"
 
-"@salesforce/core@^2.6.0":
+"@salesforce/core@^2.12.3", "@salesforce/core@^2.6.0":
   version "2.12.3"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-2.12.3.tgz#50d45615efe3273ad4b437e6b80ed3aa39180038"
   integrity sha512-vDT9XBjRHs31q6tA8HwEBU2JENWKMbDPtkISS3qLX5iKkmPPYobSPJBRVheleP/bMCkwhc7QEwZYUNtHeGHBRw==
@@ -875,13 +876,6 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
-
-"@types/xml2js@^0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@types/xml2js/-/xml2js-0.4.5.tgz#d21759b056f282d9c7066f15bbf5c19b908f22fa"
-  integrity sha512-yohU3zMn0fkhlape1nxXG2bLEGZRc1FeqF80RoHaYXJN7uibaauXfhzhOJr1Xh36sn+/tx21QAOf07b/xYVk1w==
-  dependencies:
-    "@types/node" "*"
 
 "@types/yargs-parser@*":
   version "15.0.0"

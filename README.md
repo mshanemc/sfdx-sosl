@@ -1,6 +1,6 @@
 # `plugin-streaming`
 
-[![npm version](https://badge.fury.io/js/%40mshanemc%2Fplugin-streaming.svg)](https://badge.fury.io/js/%40mshanemc%2Fplugin-streaming)
+[![npm version](https://badge.fury.io/js/%40mshanemc%2Fsfdx-sosl.svg)](https://badge.fury.io/js/%40mshanemc%2Fsfdx-sosl)
 
 Streaming API and push topic management.
 
@@ -8,12 +8,12 @@ Streaming API and push topic management.
 
 Install like this:
 
-`sfdx plugins:install @mshanemc/plugin-streaming`
+`sfdx plugins:install @mshanemc/sfdx-sosl`
 
 Command inventory:
 
 ```
-$ sfdx streaming --help
+$ sfdx sosl --help
 ```
 
 # Commands

@@ -1,4 +1,5 @@
 import { flags, SfdxCommand } from '@salesforce/command';
+import * as chalk from 'chalk';
 
 export default class SOSLQuery extends SfdxCommand {
     public static description = `Runs a sosl query.  SOSL Reference: https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl_syntax.htm`;
@@ -40,7 +41,8 @@ export default class SOSLQuery extends SfdxCommand {
 
         // iterate the types, one table for each
         for (const objType of types) {
-            this.ux.log(objType);
+            this.ux.log();
+            this.ux.log(chalk.blueBright(objType));
             const fields = [
                 ...new Set(...result.searchRecords.filter((row) => row.attributes.type === objType).map((row) => Object.keys(row)))
             ].filter((property) => property !== 'attributes');
@@ -52,26 +54,26 @@ export default class SOSLQuery extends SfdxCommand {
                         {
                             key: 'attributes.url',
                             label: 'ID',
-                            get: (row) => row.attributes.url.substr(row.attributes.url.lastIndexOf('/') + 1)
+                            get: (row: any) => row.attributes.url.substr(row.attributes.url.lastIndexOf('/') + 1)
                         },
                         ...fields.map((field) => ({ key: field }))
                     ]
                 }
             );
             this.ux.log();
-            this.ux.log();
         }
         return result;
     }
 }
 
+interface SOSLRecord {
+    attributes: {
+        type: string;
+        url: string;
+    };
+    [key: string]: unknown;
+}
+
 interface SOSLResponse {
-    searchRecords: [
-        {
-            attributes: {
-                type: string;
-                url: string;
-            };
-        }
-    ];
+    searchRecords: SOSLRecord[];
 }
