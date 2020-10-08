@@ -2,7 +2,7 @@ import { flags, SfdxCommand } from '@salesforce/command';
 import * as chalk from 'chalk';
 
 export default class SOSLQuery extends SfdxCommand {
-    public static description = `Runs a sosl query.  SOSL Reference: https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl_syntax.htm`;
+    public static description = `Runs a SOSL query.  SOSL Reference: https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_sosl_syntax.htm`;
 
     public static aliases = [
         'shane:data:sosl:query',
